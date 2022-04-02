@@ -4,13 +4,11 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import SignOut from "./Components/SignOut";
 import SignIn from "./Components/SignIn";
 import ChatRoom from "./Components/ChatRoom";
-import { useRef, useEffect, useState } from "react";
 
 const auth = firebase.auth();
 
 function App() {
   const [user] = useAuthState(auth);
-  const vidRef = useRef();
 
   return (
     <div className="App">
@@ -25,7 +23,6 @@ function App() {
             no-controls="true"
             autoPlay={"autoPlay"}
             muted
-            ref={vidRef}
           >
             <source
               src="https://firebasestorage.googleapis.com/v0/b/sensepath-chat.appspot.com/o/small.ogv?alt=media&token=0b30d55a-287e-442c-a514-551a841d0c72"
